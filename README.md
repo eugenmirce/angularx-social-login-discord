@@ -1,7 +1,7 @@
 # Twitch Angular Social Login
 
 ## Description
-Discord social login extension for [@abacritt/angularx-social-login](https://github.com/abacritt/angularx-social-login) Angular Library.
+Twitch social login extension for [@abacritt/angularx-social-login](https://github.com/abacritt/angularx-social-login) Angular Library.
 
 ## Installation
 
@@ -10,7 +10,6 @@ Discord social login extension for [@abacritt/angularx-social-login](https://git
 npm i @abacritt/angularx-social-login @eugenmirce/anguarx-social-login-discord
 ```
 Also installing the angularx-social-login module as it is a dependency.
-
 
 ### Import the module
 Import the `angularx-social-login` modules needed for the social login.  
@@ -39,7 +38,7 @@ import {DiscordLoginProvider} from '@eugenmirce/angularx-social-login-discord';
               'YOUR_CLIENT_ID',
               {
                 redirectUri: 'YOUR_REDIRECT_URL',
-                scopes: ['identity', 'email']
+                scopes: ['identify', 'email']
               }
             )
           }
@@ -54,12 +53,12 @@ import {DiscordLoginProvider} from '@eugenmirce/angularx-social-login-discord';
 export class AppModule { }
 ```
 
-### Sign in with Twitch
+### Sign in with Discord
 
 ```javascript
 
 import { SocialAuthService } from "@abacritt/angularx-social-login";
-import { DiscordLoginProvider } from "@eugenmirce/angularx-social-login-twitch";
+import { DiscordLoginProvider } from "@eugenmirce/angularx-social-login-discord";
 
 @Component({
   selector: 'app-demo',
@@ -84,21 +83,27 @@ export class DemoComponent {
 ```javascript
 const discordInitOptions: {
   redirectUri: 'YOUR_REDIRECT_URI',
-  scopes: ['user:read:email'], // To get access to logged in user email information
-  forceVerify: false, // Force the user to re-authorize on each login [default is false]
-  responseType: 'token'; // Use token for implicit grant authentication flow that is the one supported
+  scopes: ['identify', 'email'], // To get access to logged in user information and email
+  consent: 'consent' // Use `none` to skip the authorization screen for already authorized users [default is `consent`]
 };
 ```
 You can use them in the `AppModule`
+
 ```javascript
 ...
 providers: [
-  {
-    id: DiscordLoginProvider.PROVIDER_ID,
-    provider: new DiscordLoginProvider(
-      'YOUR_CLIENT_ID', discordInitOptions
-    )
-  }
+    {
+        id: DiscordLoginProvider.PROVIDER_ID,
+        provider: new DiscordLoginProvider(
+            'YOUR_CLIENT_ID', discordInitOptions
+        )
+    }
 ]
 ...
 ```
+
+### Check our other social login providers in Angular
+
+| Name | Repository | NPM |
+|---|---|---|
+| angularx-social-login-twitch | [Github](https://github.com/eugenmirce/angularx-social-login-twitch) | [npm](https://www.npmjs.com/package/@eugenmirce/angularx-social-login-twitch)|

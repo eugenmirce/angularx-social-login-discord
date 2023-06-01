@@ -9,7 +9,8 @@ export interface DiscordInitOptions {
      */
     redirectUri: string;
     /**
-     * Set to true to force the user to re-authorize your app’s access to their resources.
+     * Set prompt to `none` for previous authorized users to still re-approve the application [default]
+     * or set to `consent` so they can skip the authorization screen
      */
     prompt?: 'none' | 'consent';
     /**
@@ -22,9 +23,8 @@ export class DiscordLoginProvider extends BaseLoginProvider {
 
     public static readonly PROVIDER_ID: string = 'DISCORD';
 
-    private static readonly DISCORD_AUTH_URL: string = 'https://discord.com/oauth2/authorize';
-    private static readonly DISCORD_REVOKE_TOKEN: string = 'https://discord.com/api/v13/oauth2/token/revoke';
-    private static readonly DISCORD_USER_URL: string = 'https://discordapp.com/api/users/@me';
+    private static readonly DISCORD_AUTH_URL: string = 'https://discord.com/api/v10/oauth2/authorize';
+    private static readonly DISCORD_USER_URL: string = 'https://discord.com/api/v10/users/@me';
 
     constructor(
         private clientId: string,
@@ -211,7 +211,7 @@ export class DiscordLoginProvider extends BaseLoginProvider {
         }
         const params = new HttpParams()
             .set('client_id', this.clientId)
-            .set('consent', this.initOptions.prompt || 'none')
+            .set('prompt', this.initOptions.prompt || 'none')
             .set('redirect_uri', this.initOptions.redirectUri)
             .set('response_type', 'token')
             .set('scope', scope);
