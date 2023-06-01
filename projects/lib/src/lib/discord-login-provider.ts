@@ -1,6 +1,6 @@
-import {BaseLoginProvider, SocialUser} from '@abacritt/angularx-social-login';
-import {HttpHeaders, HttpParams, HttpRequest} from '@angular/common/http';
-import {UtilsService} from './utils.service';
+import { BaseLoginProvider, SocialUser } from '@abacritt/angularx-social-login';
+import { HttpHeaders, HttpParams, HttpRequest } from '@angular/common/http';
+import { UtilsService } from './utils.service';
 
 export interface DiscordInitOptions {
     /**

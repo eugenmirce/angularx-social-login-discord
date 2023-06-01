@@ -4,7 +4,8 @@ import { HttpHeaders, HttpParams } from "@angular/common/http";
  * Utils Service
  */
 export class UtilsService {
-    constructor() { }
+    constructor() {
+    }
 
     /**
      * Request construct and retrieve response
