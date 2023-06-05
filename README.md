@@ -1,7 +1,7 @@
-# Twitch Angular Social Login
+# Discord Angular Social Login
 
 ## Description
-Twitch social login extension for [@abacritt/angularx-social-login](https://github.com/abacritt/angularx-social-login) Angular Library.
+Discord social login extension for [@abacritt/angularx-social-login](https://github.com/abacritt/angularx-social-login) Angular Library.
 
 ## Installation
 
@@ -104,6 +104,7 @@ providers: [
 
 ### Check our other social login providers in Angular
 
-| Name | Repository | NPM |
-|---|---|---|
-| angularx-social-login-twitch | [Github](https://github.com/eugenmirce/angularx-social-login-twitch) | [npm](https://www.npmjs.com/package/@eugenmirce/angularx-social-login-twitch)|
+| Name | Repository | NPM                                                                            |
+|---|---|--------------------------------------------------------------------------------|
+| angularx-social-login-twitch | [Github](https://github.com/eugenmirce/angularx-social-login-twitch) | [npm](https://www.npmjs.com/package/@eugenmirce/angularx-social-login-twitch)  |
+| angularx-social-login-spotify | [Github](https://github.com/eugenmirce/angularx-social-login-spotify) | [npm](https://www.npmjs.com/package/@eugenmirce/angularx-social-login-spotify) |

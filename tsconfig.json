@@ -20,8 +20,8 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "paths": {
-      "angularx-social-login-twitch": [
-        "dist/angularx-social-login-twitch"
+      "angularx-social-login-discord": [
+        "dist/angularx-social-login-discord"
       ]
     },
     "lib": [
